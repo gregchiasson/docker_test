@@ -22,12 +22,18 @@ note that there is basically no validation of any type, which is...not great.
 
 curl -X POST localhost:3000/api/items -d '[{"name":"foo"}, {"name":"bar"}, {"name":"baz"}]' -H 'Content-Type:application/json'
 
+curl localhost:3000/api/items
+
+curl localhost:3000/api/item/2
+
 curl -X DELETE localhost:3000/api/items
+
+curl -X POST localhost:3000/api/item -d '{"name":"foo"}' -H 'Content-Type:application/json'
 
 curl -X POST localhost:3000/api/item -d '{"name":"bar"}' -H 'Content-Type:application/json'
 
 curl localhost:3000/api/items
 
-curl localhost:3000/api/item/2
+curl -X PUT localhost:3000/api/item/2 -d '{"name":"barf"}' -H 'Content-Type:application/json'
 
 curl -X DELETE localhost:3000/api/item/2
