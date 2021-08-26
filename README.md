@@ -1,12 +1,11 @@
 # docker_test
-testing
-
-TODO: create the endpoints and list them here
 
 # ports
 to change the port, change the docker mapping, or pass it in to the node app as an argument, eg:
 
 node app.js 1337
+
+default port is 3000
 
 # docker
 there's a dockerfile.
@@ -16,6 +15,11 @@ docker build . -t greg/docker-test
 docker run -p 6969:3000 greg/docker-test
 
 TODO: add postgres to the dockerfile
+
+# TODOs
+- add any kind of validation or better error handling
+- there's a lot of repeating code in the post/put methods that i'd rather abstract out
+- items can have categories, which isn't really supported or exposed
 
 # "tests"
 note that there is basically no validation of any type, which is...not great.
