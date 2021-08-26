@@ -22,10 +22,10 @@ app.get('/', (req, res) => {
 
 // add endpoints by class, have them expose their own methods
 var dbh = 'ok';
-const items_api = new items(dbh) 
+const items_api = new items() 
 items_api.register(PREFIX, app);
 
-const base_api = new api(dbh);
+const base_api = new api();
 base_api.default_routes(app);
 
 app.listen(PORT, HOST);
