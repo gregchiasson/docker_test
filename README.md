@@ -20,6 +20,10 @@ TODO: add postgres to the dockerfile
 # "tests"
 note that there is basically no validation of any type, which is...not great.
 
+curl -X POST localhost:3000/api/items -d '[{"name":"foo"}, {"name":"bar"}, {"name":"baz"}]' -H 'Content-Type:application/json'
+
+curl -X DELETE localhost:3000/api/items
+
 curl -X POST localhost:3000/api/item -d '{"name":"bar"}' -H 'Content-Type:application/json'
 
 curl localhost:3000/api/items

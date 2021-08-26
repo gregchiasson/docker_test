@@ -13,6 +13,8 @@ const PREFIX  = 'api';
 // endpoints
 const items = require('./lib/api_items');
 
+api.logger('INFO', 'starting up...');
+
 app.use(express.json());
 
 // App
@@ -29,4 +31,4 @@ const base_api = new api();
 base_api.default_routes(app);
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+api.logger('INFO', 'Running on port ' + PORT);
