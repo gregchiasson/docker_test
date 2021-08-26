@@ -15,6 +15,7 @@ CREATE TABLE categories (
 );
 
 CREATE TABLE items_categories (
+    id SERIAL NOT NULL PRIMARY KEY,
     item_id INTEGER NOT NULL REFERENCES items(id),
     category_id INTEGER NOT NULL REFERENCES categories(id)
 );
