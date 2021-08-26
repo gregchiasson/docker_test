@@ -11,7 +11,9 @@ const app     = express();
 const PREFIX  = 'api';
 
 // endpoints
-const items = require('./lib/api_items');
+const items             = require('./lib/api_items');
+const categories        = require('./lib/api_categories');
+const items_categories  = require('./lib/api_items_categories');
 
 api.logger('INFO', 'starting up...');
 
@@ -26,6 +28,12 @@ app.get('/', (req, res) => {
 var dbh = 'ok';
 const items_api = new items() 
 items_api.register(PREFIX, app);
+
+const categories_api = new categories() 
+categories_api.register(PREFIX, app);
+
+const items_categories_api = new items_categories() 
+items_categories_api.register(PREFIX, app);
 
 const base_api = new api();
 base_api.default_routes(app);
