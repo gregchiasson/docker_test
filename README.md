@@ -30,6 +30,16 @@ docker run -d -p 1337:3000 greg/docker-test
 - I should probably ON DELETE CASCADE the item_category stuff, instead of requiring extra calls to delete those first.
 - Would be nice to do a deep fetch on items, to get their categories, if any.
 
+# Database schema
+
+The schema is in schema.sql, and creates the empty tables. To populate it:
+
+createdb [database_name]
+
+psql -U [username] [databasename] < /path/to/project/schema.sql
+
+It just creates the tables, so you should only have to run it once, but if you ever need to blank out the database, re-running that command should do the job. It drops and re-creates the tables and can be run as many times as needed.
+
 # "tests"
 These are extremely not great, but there's not a lot of tooling, since it's just cURL. Other than the IDs in a few cases, these should be able to be run in order on a fresh container or DB refresh, and not error out.
 
